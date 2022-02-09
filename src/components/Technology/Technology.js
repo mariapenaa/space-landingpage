@@ -12,6 +12,7 @@ const Technology = () => {
     let [data, setData] = useState({})
     let [index, setIndex] = useState(1)
     let [screenWidth, setWidth] = useState(window.innerWidth)
+    let [imgHeight, setImgHeight] = useState(0)
 
     useEffect(()=>{
         let index = dataJ.technology.findIndex(m=>m.name.toLowerCase() === tech.toLowerCase())
@@ -22,7 +23,7 @@ const Technology = () => {
         function handleResize() {
             setWidth(window.innerWidth)
         }
-
+        
         window.addEventListener('resize', handleResize)
         
         return _ => {
@@ -30,23 +31,15 @@ const Technology = () => {
         }
     })
 
-
-    const changeTech = (d) => {
-        setTech(d)
-        switch (d) {
-            case 'launch vehicle':
-                setImg(lauchImgMobile)
-                break;
-            case 'spaceport':
-                setImg(spaceportImgMobile)
-                break;
-            case 'space capsule':
-                setImg(capsuleImgMobile)
-                break;
-            default:
-                break;
-        }
+    const handleImageLoad = (event) => {
+        // Do whatever you want here
+        const imageHeight = event.target.clientHeight;
+        setImgHeight(imageHeight)
+        console.log(imageHeight)
     }
+
+    //316 - 390
+    //115px - 162
 
     const changeIndex = (i) => {
         if(i === 4){
@@ -64,11 +57,12 @@ const Technology = () => {
                 arrows={false}
                 show={1}
                 infiniteLoop={true}
-                bigDots={screenWidth < 1440 ? false : true}
+                bigDots={true}
+                dotsHeight={imgHeight}
                 changeIndexDots={(i) => changeIndex(i)}>
                     {dataJ.technology.map((e, idx)=> 
                         <div key={idx} className="techCarousel">
-                            <img src={screenWidth < 1440 ? e.images.landscape : e.images.portrait} alt="technology image" className="techImg"/>
+                            <img onLoad={handleImageLoad} src={screenWidth < 1440 ? e.images.landscape : e.images.portrait}  alt="technology image" className="techImg"/>
                             <div className="techText mt-3">
                                 <p className="subheading2">The terminology...</p>
                                 <p className="subheading1">{e.name}</p>

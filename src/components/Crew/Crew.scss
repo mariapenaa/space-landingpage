@@ -33,7 +33,9 @@
     flex-direction:row;
     justify-content:center;
     width:100%;
-    bottom:43vh;
+    top:29vh;
+    z-index:10;
+    cursor:pointer;
 }
 
 .circle {
@@ -88,15 +90,20 @@
     }
 
     .dots {
-        bottom:53vh;
+        top:26vh;
     }
 
 }
 
 @media only screen and($media-desktop) {
     .crewContainer {
-        padding: 12rem 7rem 0rem 7rem;
+        padding: 14rem 7rem 0rem 7rem;
+/*         padding: 14rem 10rem 4rem 10rem; */
         background-image:url(/images/crew/background-crew-desktop.jpg);
+    }
+
+    .navTextDeskt {
+        padding-left:3rem;
     }
 
     .carrouselContainer {
@@ -119,7 +126,8 @@
     .dots {
         width:74%;
         justify-content: flex-start;
-        bottom:8vh;
+        top: 55vh;
+        right: 20%;
     }
 
     .circle {

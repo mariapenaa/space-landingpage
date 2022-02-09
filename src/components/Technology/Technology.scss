@@ -18,7 +18,7 @@
     flex-direction:row;
     justify-content:center;
     width:100%;
-    bottom:43vh;
+    cursor:pointer;
 }
 
 .circle2 {
@@ -52,9 +52,7 @@
 }
 
 @media only screen and ($media-tablet) {
-    .navTextTech {
-        padding-left:2rem;
-    }
+
 
     .techContainer {
         padding-top:7rem;
@@ -88,7 +86,7 @@
 @media only screen and($media-desktop) {
     .techContainer {
         background-image:url(/images/technology/background-technology-desktop.jpg);
-        padding: 12rem 0rem 0rem 11rem;
+        padding: 14rem 0rem 0rem 10rem;
     }
 
     .techCarousel {

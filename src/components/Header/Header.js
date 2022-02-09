@@ -36,12 +36,15 @@ const Header = () => {
     const location = useLocation();
     
     useEffect(()=> {
-        if(location.pathname==='/'){
+        let string = location.pathname.substring(1)
+        let pathnameIndex = string.indexOf('/') + 1
+        if(location.pathname==='/space-landingpage'){
             setTab('home')
         }else{
-            setTab(location.pathname.substring(1))
+            console.log(string.substring(pathnameIndex))
+            setTab(string.substring(pathnameIndex))
         }
-    }, [])
+    }, [location.pathname])
 
     const tabClick = (d) => {
         setTab(d)
@@ -65,18 +68,18 @@ const Header = () => {
                         <CloseIcon className="menuIcon" onClick={()=>setOpen(false)}/>
                     </div>
                     <ul className="drawerList">
-                        <li onClick={()=>tabClick('home')}><Link to="/" className={tab === 'home' ? 'navText active' : 'navText hoverLine'} ><span style={{fontWeight:'bold'}}>00</span> Home</Link></li>
-                        <li onClick={()=>tabClick('crew')}><Link to="/crew" className={tab === 'crew' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>01</span> Crew</Link></li>
-                        <li onClick={()=>tabClick('destination')}> <Link to="/destination" className={tab === 'destination' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>02</span> Destination</Link></li>
-                        <li onClick={()=>tabClick('technology')}><Link to="/technology" className={tab === 'tech' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>03</span> Technology</Link></li>
+                        <li onClick={()=>tabClick('home')}><Link to='/space-landingpage'  className={tab === 'home' ? 'navText active' : 'navText hoverLine'} ><span style={{fontWeight:'bold'}}>00</span> Home</Link></li>
+                        <li onClick={()=>tabClick('destination')}> <Link to='/space-landingpage/destination' className={tab === 'destination' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>01</span> Destination</Link></li>
+                        <li onClick={()=>tabClick('crew')}><Link to='/space-landingpage/crew' className={tab === 'crew' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>02</span> Crew</Link></li>
+                        <li onClick={()=>tabClick('technology')}><Link to='/space-landingpage/technology' className={tab === 'technology' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>03</span> Technology</Link></li>
                     </ul>
                 </Drawer>
     
             <ul className="drawerList2">
-                    <li onClick={()=>tabClick('home')}><Link to="/" className={tab === 'home' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>00 </span>   Home</Link></li>
-                    <li onClick={()=>tabClick('crew')}><Link to="/crew" className={tab === 'crew' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>01</span> Crew</Link></li>
-                    <li onClick={()=>tabClick('destination')}> <Link to="/destination" className={tab === 'destination' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>02</span> Destination</Link></li>
-                    <li onClick={()=>tabClick('technology')}><Link to="/technology" className={tab === 'tech' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>03</span> Technology</Link></li>
+                    <li onClick={()=>tabClick('home')}><Link to="/space-landingpage" className={tab === 'home' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>00 </span>   Home</Link></li>
+                    <li onClick={()=>tabClick('destination')}> <Link to="/space-landingpage/destination" className={tab === 'destination' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>01</span> Destination</Link></li>
+                    <li onClick={()=>tabClick('crew')}><Link to="/space-landingpage/crew" className={tab === 'crew' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>02</span> Crew</Link></li>
+                    <li onClick={()=>tabClick('technology')}><Link to="/space-landingpage/technology" className={tab === 'technology' ? 'navText active' : 'navText hoverLine'}><span style={{fontWeight:'bold'}}>03</span> Technology</Link></li>
                 </ul>
         </header>
     );

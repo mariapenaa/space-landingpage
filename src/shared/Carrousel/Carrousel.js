@@ -15,7 +15,6 @@ const Carousel = (props) => {
 
     // Set the length to match current children from props
     useEffect(() => {
-      console.log(children[0].props.children[1])
       setLength(children.length)
       setIsRepeating(infiniteLoop && children.length > show)
   }, [children, infiniteLoop, show])
@@ -132,11 +131,19 @@ const Carousel = (props) => {
           </button> : <span></span>
           }
               {props.bigDots ?
-                <div className="dots2 my-3">
+                <div className="dots2 my-3" style={{top:props.dotsHeight+(0.05*props.dotsHeight)+'px'}}>
                     <span className={ currentIndex === 0 || currentIndex === 3 ? 'circle2' : 'circle2 opacity2'} onClick={()=>setCurrentIndex(0)}>1</span>
                     <span className={currentIndex === 1 ? 'circle2' : 'circle2 opacity2'} onClick={()=>setCurrentIndex(1)}>2</span>
                     <span className={currentIndex === 2 ? 'circle2' : 'circle2 opacity2'} onClick={()=>setCurrentIndex(2)}>3</span>
                 </div> : <span></span>
+              }
+              {props.smallDots ?
+                <div className="dots my-3">
+                  <span className={currentIndex === 0 || currentIndex === 4 ? 'circle' : 'circle opacity'} onClick={()=>setCurrentIndex(0)}></span>
+                  <span className={currentIndex === 1 ? 'circle' : 'circle opacity'} onClick={()=>setCurrentIndex(1)}></span>
+                  <span className={currentIndex === 2 ? 'circle' : 'circle opacity'} onClick={()=>setCurrentIndex(2)}></span>
+                  <span className={currentIndex === 3 ? 'circle' : 'circle opacity'} onClick={()=>setCurrentIndex(3)}></span>
+                </div>: <span></span>
               }
             <div className="carousel-content-wrapper"  
               onTouchStart={handleTouchStart}
