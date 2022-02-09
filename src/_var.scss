@@ -1,0 +1,174 @@
+//colors:
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800&family=Bellefair&display=swap');
+
+$black: rgb(11, 13, 23);
+$purple:rgb(208, 214, 249);
+$white:white;
+
+$fontBel:  'Bellefair', serif;
+$fontBar:'Barlow Condensed', sans-serif;
+
+$media-tablet: 'min-width: 768px';
+$media-desktop: 'min-width: 1440px';
+
+h1 {
+    font-family:$fontBel;
+    font-size:5rem;
+    color:white;
+    margin:0px;
+    text-transform:uppercase;
+    font-weight:400;
+    text-align:center;
+}
+
+h2 {
+    font-family:$fontBel;
+    font-size:100px;
+    color:white;
+    margin:0px;
+}
+
+h3 {
+    font-family:$fontBel;
+    font-size:56px;
+    color:white;
+    margin:0px;
+}
+
+h4 {
+    font-family:$fontBel;
+    font-size:32px;
+    color:white;
+    margin:0px;
+}
+
+h5 {
+    font-family:$fontBar;
+    font-size:1.48rem;
+    font-weight:400;
+    text-transform:uppercase;
+    color:$purple;
+    margin:0px;
+}
+
+.subheading1 {
+    font-family:$fontBel;
+    font-size: 1.75rem;
+    color:white;
+    margin:0px;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.subheading2 {
+    font-family:$fontBar;
+    font-size:0.9rem;
+    letter-spacing:0.1rem;
+    color:$purple;
+    margin:0px;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.subheading3 {
+    font-family:$fontBel;
+    font-size:1.2rem;
+    letter-spacing:0.1rem;
+    opacity:0.25;
+    color:white;
+    margin:0px;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+.navText {
+    font-family:$fontBar;
+    font-size:1rem;
+    letter-spacing:0.2rem;
+    text-transform:uppercase;
+    color:white;
+    margin:0px;
+    text-align:center;
+}
+
+.bodyText {
+    font-size: 1.15rem;
+    font-family:$fontBar;
+    color:$purple;
+    line-height:1.8rem;
+    margin:0px;
+    text-align:center;
+    white-space: break-spaces;
+}
+
+@media only screen and ($media-tablet) {
+    .subheading3 {
+        font-size:1.5rem;
+    }
+
+    .subheading1 {
+        font-size:2rem;
+    }
+
+    h1 {
+        font-size:10rem;
+    }
+
+    h5 {
+        font-size:1.9rem;
+    }
+
+    .textHome {
+        padding:0 9rem;
+    }
+
+    .bodyText {
+        font-size:1.4rem;
+    }
+
+    .navText {
+        text-align:left;
+    }
+
+    .subheading2 {
+        font-size:1.2rem;
+    }
+}
+
+@media only screen and ($media-desktop) {
+    .textHome {
+        padding:0rem;
+        text-align:left;
+    }
+
+    h5 {
+        font-size:2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .navText {
+        font-size:1.2rem;
+    }
+
+    .bodyText {
+        text-align:left;
+        line-height:2.2rem;
+    }
+
+    .subheading1 {
+        text-align:left;
+        font-size:2.8rem;
+    }
+
+    .subheading2 {
+        text-align:left;
+    }
+
+    .subheading3 {
+        text-align:left;
+        font-size:2rem;
+    }
+
+
+
+}

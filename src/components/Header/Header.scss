@@ -1,0 +1,115 @@
+@import '/src/var';
+
+header {
+    position:fixed;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+    width:100%;
+    padding:1.5rem;
+    z-index:5;
+}
+
+.drawer {
+    display:block;
+}
+.menuIcon {
+    color:$purple;
+    font-size:2.5rem !important;
+}
+
+.drawerList {
+    padding:2rem 3rem;
+    li {
+        list-style:none;
+        text-decoration: none;
+        color:white;
+        margin:1.5rem 0rem;
+        a {
+            text-decoration:none;
+            color:white;
+        }
+    }
+}
+
+.drawerList2 {
+    display:none;
+}
+
+
+@media only screen and ($media-tablet) {
+    .drawer {
+        display:none;
+    }
+
+    .menuIcon {
+        display:none !important;
+    }
+
+    .desktop {
+        display:block;
+    }
+
+    .drawerList2 {
+        display: flex;
+        flex-direction:row;
+        padding:2rem 2rem;
+        align-items:center;
+        background: #151923;
+        li {
+            list-style:none;
+            text-decoration: none;
+            color:white;
+            margin:0 1rem;
+        }
+        a {
+            text-decoration:none;
+            color:white;
+        }
+        span {
+            display:none;
+        }
+    }
+
+    header {
+        img {
+            padding: 1.5rem;
+            height:100%;
+        }
+    }
+
+    header {
+        padding:0;
+    }
+}
+
+@media only screen and ($media-desktop) {
+    .drawerList2 {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(81.5485px); 
+        li {
+            margin:0 3rem;
+            a {
+                display:flex;
+            }
+        }
+        span {
+            display:block;
+            margin-right:0.5rem;
+        }
+    }
+
+    header {
+        padding-top:3rem;
+        align-items: center;
+        img {
+            padding:0 0 0 3rem;
+        }
+    }
+
+    .homeLine {
+        width: 100%;
+        margin-left: 4rem;
+        z-index: 100;
+    }
+}

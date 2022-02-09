@@ -1,0 +1,199 @@
+@import '/src/var';
+
+.destContainer {
+    min-height:100vh;
+    background-image:url(/images/destination/background-destination-mobile.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:7rem 2rem 2rem 2rem;
+}
+
+.planetImg {
+    width:50%;
+}
+
+.destNav {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width:77%;
+    justify-content: space-around;
+}
+
+.destContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.destContent > div {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.destinationH1 {
+    font-size:3.5rem;
+}
+
+.whiteLine {
+    width:100%;
+    color:white;
+}
+
+.purple {
+  color:$purple !important;
+}
+
+//line transition
+
+.hoverLine {
+    cursor:pointer;
+    text-decoration: none !important;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    visibility:none;
+  }
+  
+
+  /* Fade in */
+  .hoverLine::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: $purple;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+
+  .hoverLine:hover::after,
+  .hoverLine:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+  }
+  
+  .hoverLine::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+  }
+  
+  .hoverLine:hover::after,
+  .hoverLine:focus::after{
+    transform: scale(1);
+  }
+
+  .active {
+    cursor:pointer;
+    text-decoration: none !important;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    visibility:none;
+  }
+
+  .active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 300ms, transform 300ms;
+    transform: translate3d(0, 0.2em, 0);
+  }
+
+
+
+@media only screen and ($media-tablet) {
+  .destContainer {
+    justify-content:space-between;
+  }
+  .navText {
+    text-align:left;
+  }
+
+  .text-div {
+    padding:0rem 5rem;
+  }
+
+  .body-text {
+    line-height:2.2rem;
+    font-size:1.3rem;
+  }
+
+  .destinationH1 {
+    font-size:5.3rem;
+  }
+
+  .destNav {
+    width:50%;
+  }
+
+  .planetImg {
+    width:45%;
+    margin-bottom:2rem !important;
+  }
+
+  .navText {
+    font-size:1.2rem;
+  }
+
+
+  .text-div2 {
+    display:flex;
+    padding:0;
+    justify-content:space-between;
+    width:60%;
+  }
+}
+
+@media only screen and ($media-desktop) {
+  .destContainer {
+    background-image:url(/images/destination/background-destination-desktop.jpg);
+    height:100vh;
+    overflow-y: hidden;
+    padding: 12rem 10rem 4rem 10rem;
+    justify-content: space-around;
+  }
+
+  .destContent {
+    display:flex;
+    flex-direction:row;
+  }
+
+  .planteImg {
+    width:100%;
+  }
+
+  .destContent > div {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding-left:8rem;
+  }
+
+  .destinationH1 {
+    font-size:6.3rem;
+    text-align:left;
+  }
+
+  .text-div {
+    padding:0;
+  }
+
+  .text-div2 {
+    width:100%;
+  }
+}

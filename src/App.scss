@@ -1,0 +1,15 @@
+@import '/src/var';
+
+main {
+    min-height:100vh;
+    width:100%;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+@media only screen and ($media-tablet) {
+
+}

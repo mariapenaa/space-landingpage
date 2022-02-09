@@ -1,0 +1,121 @@
+@import '/src/var';
+
+.techContainer {
+    min-height:100vh;
+    background-image:url(/images/technology/background-technology-mobile.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:6rem 0rem 2rem 0rem;
+    overflow-x:hidden;
+}
+
+.dots2 {
+    display:flex;
+    position:absolute;
+    flex-direction:row;
+    justify-content:center;
+    width:100%;
+    bottom:43vh;
+}
+
+.circle2 {
+    width:40px;
+    height:40px;
+    background-color:white;
+    border-radius:50%;
+    margin:0px 0.5rem;
+    opacity:1;
+    color:black;
+    display:flex;
+    align-items:center;
+    font-family:$fontBel;
+    justify-content: center;
+}
+
+.opacity2 {
+    background-color:transparent;
+    color:white;
+    border:white 0.7px solid;
+}
+
+
+.techImg {
+    width:102%;
+    margin-bottom:4.5rem;
+}
+
+.techText {
+    padding:0rem 2rem;
+}
+
+@media only screen and ($media-tablet) {
+    .navTextTech {
+        padding-left:2rem;
+    }
+
+    .techContainer {
+        padding-top:7rem;
+        padding-bottom:0px;
+        background-image:url(/images/technology/background-technology-tablet.jpg);
+    }
+
+    .techImg {
+        margin-bottom: 8.5rem;
+    }
+
+    .circle2 {
+        height:60px;
+        width:60px;
+        font-size:1.4rem;
+    }
+
+    .dots2 {
+        bottom: 37vh;
+    }
+
+    .techText {
+        padding:0 9rem;
+    }
+
+    .techCarousel {
+        padding:2.7rem 0rem;
+    }
+}
+
+@media only screen and($media-desktop) {
+    .techContainer {
+        background-image:url(/images/technology/background-technology-desktop.jpg);
+        padding: 12rem 0rem 0rem 11rem;
+    }
+
+    .techCarousel {
+        display:flex;
+        flex-direction:row-reverse;
+    }
+
+    .techText {
+        padding:5rem 16rem 5rem 5rem;
+    }
+
+    .dots2 {
+        flex-direction:column;
+        position:static;
+        width:auto;
+        padding: 9rem 0rem;
+        justify-content: flex-start;
+        height:100%;
+    }
+
+    .circle2 {
+        margin:1rem 0rem;
+    }
+
+    .techImg {
+        width:auto;
+        height:90%;
+    }
+
+}
